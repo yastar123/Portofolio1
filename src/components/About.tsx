@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Calendar, MapPin, Award, Users, Coffee, Rocket } from 'lucide-react';
+import Experience from './Experience';
 
 const About: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('bio');
+  const [activeTab, setActiveTab] = useState('experience');
 
   const experiences = [
     {
       title: 'Senior Full-Stack Developer',
       company: 'TechCorp',
       period: '2022 - Present',
-      location: 'San Francisco, CA',
+      location: 'Bandar Lampung',
       description: 'Lead development of enterprise applications using React, Node.js, and cloud technologies. Mentor junior developers and architect scalable solutions.',
       color: 'cyan'
     },
@@ -102,11 +103,10 @@ const About: React.FC = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                activeTab === tab
-                  ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-black shadow-lg shadow-cyan-500/20'
-                  : 'bg-black/30 backdrop-blur-xl border border-gray-700/50 text-gray-300 hover:border-cyan-500/50'
-              }`}
+              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === tab
+                ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-black shadow-lg shadow-cyan-500/20'
+                : 'bg-black/30 backdrop-blur-xl border border-gray-700/50 text-gray-300 hover:border-cyan-500/50'
+                }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
@@ -118,23 +118,23 @@ const About: React.FC = () => {
           {activeTab === 'bio' && (
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-white">Hello, I'm Alex Rivera</h3>
+                <h3 className="text-3xl font-bold text-white">Hello, I'm Edu Juanda Pratama</h3>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  I'm a passionate full-stack developer with over 5 years of experience creating 
-                  digital solutions that combine beautiful design with powerful functionality. 
-                  My journey in tech started with a curiosity about how things work and evolved 
+                  I'm a passionate full-stack developer with over 5 years of experience creating
+                  digital solutions that combine beautiful design with powerful functionality.
+                  My journey in tech started with a curiosity about how things work and evolved
                   into a career dedicated to building applications that make people's lives easier.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to 
-                  open-source projects, or enjoying a good cup of coffee while brainstorming the 
-                  next big idea. I believe in continuous learning and staying ahead of the curve 
+                  When I'm not coding, you'll find me exploring new technologies, contributing to
+                  open-source projects, or enjoying a good cup of coffee while brainstorming the
+                  next big idea. I believe in continuous learning and staying ahead of the curve
                   in this ever-evolving tech landscape.
                 </p>
                 <div className="flex items-center space-x-4 text-gray-400">
                   <div className="flex items-center space-x-2">
                     <MapPin className="w-5 h-5" />
-                    <span>San Francisco, CA</span>
+                    <span>Bandar Lampung</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Calendar className="w-5 h-5" />
@@ -142,7 +142,7 @@ const About: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="relative">
                 <div className="bg-black/30 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-300">
                   <div className="w-full h-64 bg-gradient-to-br from-cyan-500/20 to-green-500/20 rounded-2xl flex items-center justify-center">
@@ -154,31 +154,9 @@ const About: React.FC = () => {
           )}
 
           {activeTab === 'experience' && (
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div
-                  key={index}
-                  className="bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/20 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
-                >
-                  <div className="grid lg:grid-cols-4 gap-6">
-                    <div className="lg:col-span-1">
-                      <div className={`inline-block px-3 py-1 bg-gradient-to-r ${getColorClasses(exp.color)} rounded-lg text-black text-sm font-medium mb-2`}>
-                        {exp.period}
-                      </div>
-                      <div className="text-gray-400 flex items-center space-x-1">
-                        <MapPin className="w-4 h-4" />
-                        <span>{exp.location}</span>
-                      </div>
-                    </div>
-                    <div className="lg:col-span-3">
-                      <h4 className="text-2xl font-bold text-white mb-2">{exp.title}</h4>
-                      <h5 className="text-xl text-cyan-300 mb-4">{exp.company}</h5>
-                      <p className="text-gray-300 leading-relaxed">{exp.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <>
+            <Experience />
+            </>
           )}
 
           {activeTab === 'skills' && (
@@ -202,7 +180,7 @@ const About: React.FC = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-2xl font-bold text-white mb-8">Expertise Areas</h3>
                 <div className="grid grid-cols-2 gap-4">

@@ -4,6 +4,7 @@ import { ExternalLink, Github, Filter, Search } from 'lucide-react';
 const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [visibleCount, setVisibleCount] = useState(3);
 
   const projects = [
     {
@@ -106,12 +107,15 @@ const Portfolio: React.FC = () => {
   const filteredProjects = projects.filter(project => {
     const matchesCategory = activeFilter === 'all' || project.category === activeFilter;
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
   const featuredProjects = projects.filter(project => project.featured);
+
+  // Untuk fitur load more
+  const displayedProjects = filteredProjects.slice(0, visibleCount);
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
@@ -206,11 +210,10 @@ const Portfolio: React.FC = () => {
                   <button
                     key={category.id}
                     onClick={() => setActiveFilter(category.id)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                      activeFilter === category.id
-                        ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-black'
-                        : 'bg-black/30 backdrop-blur-xl border border-gray-700/50 text-gray-300 hover:border-cyan-500/50'
-                    }`}
+                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${activeFilter === category.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-black'
+                      : 'bg-black/30 backdrop-blur-xl border border-gray-700/50 text-gray-300 hover:border-cyan-500/50'
+                      }`}
                   >
                     {category.label}
                   </button>
@@ -222,7 +225,7 @@ const Portfolio: React.FC = () => {
 
         {/* All Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {displayedProjects.map((project) => (
             <div
               key={project.id}
               className="group bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300"
@@ -273,6 +276,18 @@ const Portfolio: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < filteredProjects.length && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 3)}
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30"
+            >
+              Load More
+            </button>
+          </div>
+        )}
 
         {/* No Results */}
         {filteredProjects.length === 0 && (

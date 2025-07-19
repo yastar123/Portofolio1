@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Code, Palette, Zap, ArrowRight } from 'lucide-react';
 
 interface HeroProps {
@@ -8,6 +8,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const phrases = [
     'Full-Stack Developer',
     'UI/UX Designer',
@@ -16,42 +17,29 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   ];
 
   useEffect(() => {
-    let currentText = '';
-    let isDeleting = false;
-    let index = 0;
+    let timeoutId: NodeJS.Timeout;
+    const current = phrases[currentPhrase];
 
-    const type = () => {
-      const current = phrases[currentPhrase];
-      
-      if (isDeleting) {
-        currentText = current.substring(0, currentText.length - 1);
-      } else {
-        currentText = current.substring(0, currentText.length + 1);
-      }
-      
-      setDisplayText(currentText);
-      
-      let delta = 100;
-      
-      if (isDeleting) {
-        delta /= 2;
-      }
-      
-      if (!isDeleting && currentText === current) {
-        delta = 2000;
-        isDeleting = true;
-      } else if (isDeleting && currentText === '') {
-        isDeleting = false;
+    if (!isDeleting && displayText === current) {
+      timeoutId = setTimeout(() => setIsDeleting(true), 2000);
+    } else if (isDeleting && displayText === '') {
+      timeoutId = setTimeout(() => {
+        setIsDeleting(false);
         setCurrentPhrase((prev) => (prev + 1) % phrases.length);
-        delta = 500;
-      }
-      
-      setTimeout(type, delta);
-    };
-
-    const timeout = setTimeout(type, 1000);
-    return () => clearTimeout(timeout);
-  }, [currentPhrase]);
+      }, 300);
+    } else {
+      timeoutId = setTimeout(() => {
+        setDisplayText((prev) => {
+          if (isDeleting) {
+            return current.substring(0, prev.length - 1);
+          } else {
+            return current.substring(0, prev.length + 1);
+          }
+        });
+      }, isDeleting ? 50 : 100);
+    }
+    return () => clearTimeout(timeoutId);
+  }, [displayText, isDeleting, currentPhrase, phrases]);
 
   return (
     <section className="min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 pt-16">
@@ -64,23 +52,23 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
         {/* Main Content */}
-        <div className="mb-8">
+        <div className="my-8 ">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6">
             <span className="block text-white mb-2">Hey, I'm</span>
             <span className="block bg-gradient-to-r from-cyan-400 via-green-400 to-purple-400 bg-clip-text text-transparent">
-              Alex Rivera
+              Edu Juanda Pratama
             </span>
           </h1>
-          
+
           <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-300 mb-8 h-12">
             <span className="text-cyan-400">
               {displayText}
               <span className="animate-pulse">|</span>
             </span>
           </div>
-          
+
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Passionate developer with 5+ years creating digital experiences that blend functionality 
+            Passionate developer with 5+ years creating digital experiences that blend functionality
             with stunning aesthetics. Specialized in React, Node.js, and modern web technologies.
           </p>
         </div>
@@ -96,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <p className="text-gray-400">React, Node.js, TypeScript, Next.js</p>
             </div>
           </div>
-          
+
           <div className="group">
             <div className="bg-black/30 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6 hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 hover:-translate-y-2">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-400 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -106,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <p className="text-gray-400">UI/UX, Figma, Adobe XD, Prototyping</p>
             </div>
           </div>
-          
+
           <div className="group">
             <div className="bg-black/30 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-2">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-400 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -120,15 +108,15 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <button 
+          <button
             onClick={() => scrollToSection('experience')}
             className="group flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:scale-105"
           >
             <span>View Experience</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
-          
-          <button 
+
+          <button
             onClick={() => scrollToSection('contact')}
             className="flex items-center space-x-2 px-8 py-4 bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-xl font-semibold text-white hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105"
           >
@@ -139,7 +127,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         {/* Scroll Indicator */}
         <div className="flex flex-col items-center space-y-2">
           <p className="text-sm text-gray-500">Scroll to explore</p>
-          <div 
+          <div
             className="animate-bounce cursor-pointer"
             onClick={() => scrollToSection('about')}
           >

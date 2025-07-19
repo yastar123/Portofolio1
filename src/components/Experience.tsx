@@ -7,115 +7,108 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Senior Full-Stack Developer',
-      company: 'TechCorp Solutions',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      duration: '2+ years',
-      type: 'Full-time',
-      logo: '🏢',
-      description: 'Leading development of enterprise-scale applications and mentoring junior developers. Architecting scalable solutions using modern technologies and best practices.',
+      title: 'Web Developer (Kontrak)',
+      company: 'Freelance - Work From Home (WFH)',
+      location: 'Bandar Lampung',
+      period: 'Januari – Sekarang 2024',
+      duration: 'Saat ini',
+      type: 'Kontrak',
+      logo: '💻',
+      description: 'Terampil dalam merancang dan mengembangkan situs web responsif menggunakan HTML, CSS, JavaScript, dan framework modern. Mahir mengubah desain Figma menjadi halaman web fungsional. Fokus pada kinerja, keamanan, dan pengalaman pengguna (UX) yang optimal.',
       achievements: [
-        'Led a team of 8 developers in building a microservices architecture that improved system performance by 40%',
-        'Implemented CI/CD pipelines that reduced deployment time from 2 hours to 15 minutes',
-        'Developed a real-time analytics dashboard serving 100K+ daily active users',
-        'Mentored 5 junior developers, with 3 receiving promotions within 12 months',
-        'Reduced technical debt by 60% through systematic refactoring and code reviews'
+        'Merancang dan mengembangkan website responsif dengan HTML, CSS, JavaScript, dan framework modern.',
+        'Mengubah desain Figma menjadi halaman web fungsional.',
+        'Fokus pada kinerja, keamanan, dan UX optimal.'
       ],
-      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'Redis'],
-      projects: [
-        'Enterprise CRM System',
-        'Real-time Analytics Platform',
-        'Microservices Migration',
-        'Developer Mentorship Program'
-      ],
-      teamSize: '8 developers',
-      budget: '$2.5M annually',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Figma'],
+      projects: ['Landing Page', 'Company Profile', 'Portfolio Website'],
+      teamSize: 'Individu',
+      budget: '-',
       color: 'cyan'
     },
     {
       id: 2,
-      title: 'Full-Stack Developer',
-      company: 'StartupXYZ',
-      location: 'Remote',
-      period: '2020 - 2022',
-      duration: '2 years',
-      type: 'Full-time',
-      logo: '🚀',
-      description: 'Built and maintained multiple web applications from concept to deployment. Collaborated with cross-functional teams to deliver high-quality products.',
+      title: 'Full Stack Developer (Magang)',
+      company: 'PT.Winnicode Garuda Indonesia - WFH',
+      location: 'Bandar Lampung',
+      period: 'Agustus – September 2024',
+      duration: '2 bulan',
+      type: 'Magang',
+      logo: '🌐',
+      description: 'Spesialis dalam merancang dan membangun situs portal berita menggunakan Next.js dan PostgreSQL. Bertanggung jawab atas pengembangan front-end dan back-end untuk pengalaman pengguna yang mulus dan menarik.',
       achievements: [
-        'Developed 3 full-stack applications that generated $500K+ in revenue',
-        'Improved application load times by 65% through optimization techniques',
-        'Built responsive designs that increased mobile user engagement by 80%',
-        'Integrated payment systems processing $1M+ in transactions monthly',
-        'Established testing practices that reduced bugs in production by 70%'
+        'Merancang dan membangun portal berita dengan Next.js dan PostgreSQL.',
+        'Mengelola data dengan PostgreSQL, memastikan keamanan dan kecepatan pengambilan konten.',
+        'Mengembangkan front-end dan back-end secara terintegrasi.'
       ],
-      technologies: ['React', 'Vue.js', 'Express.js', 'MongoDB', 'Stripe', 'Firebase', 'Tailwind CSS'],
-      projects: [
-        'E-commerce Platform',
-        'SaaS Dashboard',
-        'Mobile-first Web App',
-        'Payment Integration System'
-      ],
-      teamSize: '5 developers',
-      budget: '$800K annually',
+      technologies: ['Next.js', 'PostgreSQL', 'ReactJS', 'Node.js'],
+      projects: ['Portal Berita'],
+      teamSize: '3 orang',
+      budget: '-',
       color: 'green'
     },
     {
       id: 3,
-      title: 'Frontend Developer',
-      company: 'DesignStudio Pro',
-      location: 'New York, NY',
-      period: '2019 - 2020',
-      duration: '1 year',
-      type: 'Full-time',
-      logo: '🎨',
-      description: 'Specialized in creating responsive, accessible web interfaces. Worked closely with UX designers to implement pixel-perfect designs.',
+      title: 'Asisten Praktikum Pengenalan Komputer dan Software 1',
+      company: 'Institut Teknologi Sumatera',
+      location: 'Bandar Lampung',
+      period: 'Agustus – Desember 2024',
+      duration: '5 bulan',
+      type: 'Kontrak',
+      logo: '🎓',
+      description: 'Membantu dosen dalam proses pengajaran, rekap nilai, membuat soal kuis, dan mengajarkan keterampilan praktis Excel dan Word.',
       achievements: [
-        'Converted 15+ Figma designs into responsive React components',
-        'Improved website accessibility scores from 60% to 95% WCAG compliance',
-        'Reduced CSS bundle size by 45% through optimization and modular architecture',
-        'Implemented design system used across 10+ client projects',
-        'Achieved 98+ Google Lighthouse scores on all delivered projects'
+        'Membantu dosen dalam pengajaran dan evaluasi mahasiswa.',
+        'Membuat soal kuis dan rekap nilai.',
+        'Mengajarkan penggunaan Excel dan Word.'
       ],
-      technologies: ['React', 'SCSS', 'JavaScript', 'Figma', 'Adobe XD', 'Webpack', 'Jest'],
-      projects: [
-        'Corporate Website Redesign',
-        'Design System Implementation',
-        'Accessibility Audit & Fixes',
-        'Performance Optimization'
-      ],
-      teamSize: '3 developers',
-      budget: '$400K annually',
+      technologies: ['Excel', 'Word'],
+      projects: ['Praktikum Komputer dan Software 1'],
+      teamSize: '2 orang',
+      budget: '-',
       color: 'purple'
     },
     {
       id: 4,
-      title: 'Junior Developer',
-      company: 'WebAgency Digital',
-      location: 'Boston, MA',
-      period: '2018 - 2019',
-      duration: '1 year',
-      type: 'Full-time',
-      logo: '💻',
-      description: 'Started career building client websites and learning modern web development practices. Gained experience in multiple programming languages and frameworks.',
+      title: 'Co-Head Division FrontEnd Developer (Magang)',
+      company: 'Candidate College - WFH',
+      location: 'Bandar Lampung',
+      period: 'Oktober – Maret 2025',
+      duration: '6 bulan',
+      type: 'Magang',
+      logo: '🧑‍💻',
+      description: 'Memimpin divisi FrontEnd Developer, review dan optimisasi kode, debugging, pengujian unit hingga 90% coverage, dan pembagian tugas tim.',
       achievements: [
-        'Built 20+ client websites with 100% on-time delivery rate',
-        'Learned 5 programming languages and 3 frameworks in first year',
-        'Contributed to open-source projects with 500+ GitHub stars',
-        'Received "Rookie of the Year" award for exceptional performance',
-        'Maintained 99.9% uptime across all managed websites'
+        'Review dan optimisasi kode serta debugging.',
+        'Pengujian unit hingga 90% coverage.',
+        'Mengarahkan tim dan pembagian tugas efektif.'
       ],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'WordPress', 'MySQL', 'Git'],
-      projects: [
-        'Client Portfolio Websites',
-        'WordPress Custom Themes',
-        'E-commerce Integrations',
-        'SEO Optimization'
-      ],
-      teamSize: '2 developers',
-      budget: '$200K annually',
+      technologies: ['ReactJS', 'JavaScript', 'Unit Testing'],
+      projects: ['Sistem Informasi Kampus'],
+      teamSize: '5 orang',
+      budget: '-',
       color: 'yellow'
+    },
+    {
+      id: 5,
+      title: 'Asisten Praktikum Pengenalan Komputer dan Software 2',
+      company: 'Institut Teknologi Sumatera',
+      location: 'Bandar Lampung',
+      period: 'Maret – Juni 2025',
+      duration: '4 bulan',
+      type: 'Kontrak',
+      logo: '🎓',
+      description: 'Mendampingi dosen mengajar dasar pemrograman C++ dan Flowgorithm, menyusun soal latihan, dan rekap nilai praktikum.',
+      achievements: [
+        'Mengajar dasar pemrograman C++ dan Flowgorithm.',
+        'Menyusun soal latihan dan kuis.',
+        'Rekap nilai praktikum mahasiswa.'
+      ],
+      technologies: ['C++', 'Flowgorithm'],
+      projects: ['Praktikum Komputer dan Software 2'],
+      teamSize: '2 orang',
+      budget: '-',
+      color: 'cyan'
     }
   ];
 
@@ -202,11 +195,10 @@ const Experience: React.FC = () => {
                   <button
                     key={exp.id}
                     onClick={() => setActiveExperience(index)}
-                    className={`w-full text-left p-4 rounded-2xl transition-all duration-300 ${
-                      activeExperience === index
-                        ? `bg-black/50 backdrop-blur-xl border ${getBorderColorClasses(exp.color)} shadow-lg`
-                        : 'bg-black/20 backdrop-blur-xl border border-gray-700/50 hover:border-cyan-500/30'
-                    }`}
+                    className={`w-full text-left p-4 rounded-2xl transition-all duration-300 ${activeExperience === index
+                      ? `bg-black/50 backdrop-blur-xl border ${getBorderColorClasses(exp.color)} shadow-lg`
+                      : 'bg-black/20 backdrop-blur-xl border border-gray-700/50 hover:border-cyan-500/30'
+                      }`}
                   >
                     <div className="flex items-center space-x-3 mb-2">
                       <div className="text-2xl">{exp.logo}</div>
@@ -231,9 +223,8 @@ const Experience: React.FC = () => {
                 {experiences.map((exp, index) => (
                   <div
                     key={exp.id}
-                    className={`transition-all duration-500 ${
-                      activeExperience === index ? 'opacity-100 block' : 'opacity-0 hidden'
-                    }`}
+                    className={`transition-all duration-500 ${activeExperience === index ? 'opacity-100 block' : 'opacity-0 hidden'
+                      }`}
                   >
                     {/* Header */}
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
@@ -246,7 +237,7 @@ const Experience: React.FC = () => {
                           <h4 className="text-xl text-cyan-300">{exp.company}</h4>
                         </div>
                       </div>
-                      
+
                       <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                         <div className="flex items-center space-x-1">
                           <Calendar className="w-4 h-4" />

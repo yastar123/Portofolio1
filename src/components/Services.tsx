@@ -3,6 +3,7 @@ import { Code, Palette, Smartphone, Cloud, Zap, Shield, CheckCircle, Star } from
 
 const Services: React.FC = () => {
   const [selectedPlan, setSelectedPlan] = useState('professional');
+  const [visibleServiceCount, setVisibleServiceCount] = useState(3);
 
   const services = [
     {
@@ -140,6 +141,9 @@ const Services: React.FC = () => {
     return colorMap[color as keyof typeof colorMap];
   };
 
+  // Untuk fitur load more services
+  const displayedServices = services.slice(0, visibleServiceCount);
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
@@ -155,7 +159,7 @@ const Services: React.FC = () => {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => (
+          {displayedServices.map((service, index) => (
             <div
               key={index}
               className="group bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300"
@@ -163,10 +167,10 @@ const Services: React.FC = () => {
               <div className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(service.color)} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-8 h-8" />
               </div>
-              
+
               <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-              
+
               <ul className="space-y-3">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center space-x-3">
@@ -178,108 +182,27 @@ const Services: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Pricing Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">Pricing Plans</h3>
-            <p className="text-xl text-gray-400">Choose the perfect plan for your project</p>
+        {/* Load More Button for Services */}
+        {visibleServiceCount < services.length && (
+          <div className="flex justify-center mt-8 mb-20">
+            <button
+              onClick={() => setVisibleServiceCount((prev) => prev + 3)}
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30"
+            >
+              Load More
+            </button>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.id}
-                className={`relative bg-black/30 backdrop-blur-xl border rounded-3xl p-8 transition-all duration-300 ${
-                  plan.popular
-                    ? 'border-cyan-500/50 shadow-lg shadow-cyan-500/20 scale-105'
-                    : 'border-gray-700/50 hover:border-cyan-500/30'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-500 to-green-500 text-black px-4 py-2 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center mb-8">
-                  <h4 className="text-2xl font-bold text-white mb-2">{plan.name}</h4>
-                  <p className="text-gray-400 mb-4">{plan.description}</p>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-white">${plan.price.toLocaleString()}</span>
-                    <span className="text-gray-400 ml-2">/{plan.period}</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                      <span className="text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-cyan-500 to-green-500 text-black hover:from-cyan-400 hover:to-green-400 shadow-lg shadow-cyan-500/20'
-                      : 'bg-black/50 border border-gray-700/50 text-white hover:border-cyan-500/50 hover:bg-cyan-500/10'
-                  }`}
-                >
-                  Get Started
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Testimonials */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">Client Testimonials</h3>
-            <p className="text-xl text-gray-400">What my clients say about working with me</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
-              >
-                <div className="flex items-center space-x-2 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                
-                <p className="text-gray-300 mb-6 leading-relaxed italic">
-                  "{testimonial.content}"
-                </p>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="text-3xl">{testimonial.avatar}</div>
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-gray-400 text-sm">{testimonial.position}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        )}
 
         {/* FAQ Section */}
         <div className="text-center">
           <div className="bg-black/30 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-12 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-6">Ready to Start Your Project?</h3>
             <p className="text-gray-300 text-lg mb-8">
-              Let's discuss your requirements and create something amazing together. 
+              Let's discuss your requirements and create something amazing together.
               Get a free consultation and project estimate.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30">
                 Schedule Consultation
