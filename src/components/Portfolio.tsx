@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Filter, Search } from 'lucide-react';
+import portofolio1 from '../image/portofolio1.png';
+import portofolio2 from '../image/portofolio2.png';
+import portofolio3 from '../image/portofolio3.png';
+import portofolio4 from '../image/portofolio4.png';
+import portofolio5 from '../image/portofolio5.png';
+import portofolio6 from '../image/portofolio6.png';
+import portofolio7 from '../image/portofolio7.png';
+import portofolio8 from '../image/portofolio8.png';
+import desain1 from '../image/desain1.png';
+import desain2 from '../image/desain2.png';
+import desain3 from '../image/desain3.png';
+import desain4 from '../image/desain4.png';
 
 const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -9,99 +21,135 @@ const Portfolio: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'A modern e-commerce platform with advanced features including AI-powered recommendations, real-time analytics, and seamless payment integration.',
-      image: 'https://images.pexels.com/photos/7414282/pexels-photo-7414282.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'company profile (PromptCreator)',
+      description: 'Website company profile modern yang menampilkan informasi perusahaan, layanan, dan kontak secara profesional serta responsif.',
+      image: portofolio1,
       category: 'web',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: '#',
+      technologies: ['NextJS', 'Tailwindcss', 'Typescript', 'Stripe'],
+      liveUrl: 'https://prompt-creator-beige.vercel.app/',
       githubUrl: '#',
       featured: true
     },
     {
       id: 2,
-      title: 'AI-Powered Dashboard',
-      description: 'Intelligent analytics dashboard with machine learning insights, predictive modeling, and real-time data visualization.',
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'PPLK ITERA 2024',
+      description: 'Platform digital untuk kegiatan PPLK ITERA 2024, memudahkan peserta dan panitia dalam akses informasi, jadwal, serta interaksi daring.',
+      image: portofolio2,
       category: 'web',
-      technologies: ['Next.js', 'Python', 'TensorFlow', 'D3.js'],
-      liveUrl: '#',
+      technologies: ['Laravel', 'ReactJS', 'MySQL', 'Tailwindcss'],
+      liveUrl: 'https://pplk-2024-fe-only.vercel.app/',
       githubUrl: '#',
       featured: true
     },
     {
       id: 3,
-      title: 'Mobile Banking App',
-      description: 'Secure mobile banking application with biometric authentication, real-time transactions, and comprehensive financial management.',
-      image: 'https://images.pexels.com/photos/4475523/pexels-photo-4475523.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Portofolio',
+      description: 'Website portofolio pribadi untuk menampilkan karya, pengalaman, dan keahlian secara interaktif dan menarik.',
+      image: portofolio3,
       category: 'mobile',
-      technologies: ['React Native', 'Firebase', 'Biometrics'],
+      technologies: ['ReactJS', 'Tailwindcss', 'Javascript'],
       liveUrl: '#',
       githubUrl: '#',
       featured: false
     },
     {
       id: 4,
-      title: 'Real Estate Platform',
-      description: 'Comprehensive real estate platform with virtual tours, mortgage calculators, and advanced property search capabilities.',
-      image: 'https://images.pexels.com/photos/7578927/pexels-photo-7578927.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'AgroMonitoring',
+      description: 'Aplikasi monitoring pertanian berbasis web untuk memantau kondisi lahan, cuaca, dan hasil panen secara real-time.',
+      image: portofolio4,
       category: 'web',
-      technologies: ['Vue.js', 'Laravel', 'MySQL', '360° Views'],
-      liveUrl: '#',
+      technologies: ['ExpressJS', 'Firebase', 'Tailwindcss'],
+      liveUrl: 'https://agromonitoring.onrender.com/',
       githubUrl: '#',
       featured: false
     },
     {
       id: 5,
-      title: 'Social Media Analytics',
-      description: 'Advanced social media analytics tool with sentiment analysis, engagement tracking, and competitor insights.',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Company profile (WebCipta)',
+      description: 'Website company profile modern yang menampilkan informasi perusahaan, layanan, dan kontak secara profesional serta responsif.',
+      image: portofolio5,
       category: 'web',
-      technologies: ['React', 'D3.js', 'APIs', 'ML'],
-      liveUrl: '#',
+      technologies: ['ReactJS', 'Tailwindcss'],
+      liveUrl: 'https://web-cipta.vercel.app/',
       githubUrl: '#',
       featured: true
     },
     {
       id: 6,
-      title: 'Cryptocurrency Tracker',
-      description: 'Real-time cryptocurrency tracking app with portfolio management, price alerts, and market analysis tools.',
-      image: 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'PPLK ITERA 2025',
+      description: 'Platform digital untuk kegiatan PPLK ITERA 2024, memudahkan peserta dan panitia dalam akses informasi, jadwal, serta interaksi daring.',
+      image: portofolio6,
       category: 'mobile',
-      technologies: ['Angular', 'WebSocket', 'Chart.js'],
+      technologies: ['Laravel', 'ReactJS', 'MySQL'],
       liveUrl: '#',
       githubUrl: '#',
       featured: false
     },
     {
       id: 7,
-      title: 'Restaurant Management',
-      description: 'Complete restaurant management system with inventory tracking, order management, and customer analytics.',
-      image: 'https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'KomikKuy',
+      description: 'Platform baca komik digital dengan koleksi komik terbaru, fitur bookmark, dan tampilan ramah pengguna.',
+      image: portofolio7,
       category: 'web',
-      technologies: ['MERN Stack', 'POS Integration', 'Analytics'],
-      liveUrl: '#',
+      technologies: ['ReactJS', 'Firebase', 'Tailwindcss'],
+      liveUrl: 'https://www.komikkuy.my.id/',
       githubUrl: '#',
       featured: false
     },
     {
       id: 8,
-      title: 'Educational Platform',
-      description: 'Interactive learning platform with video streaming, progress tracking, and collaborative tools for online education.',
-      image: 'https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Moninoring Kualitas Udara (SiPoljar)',
+      description: 'Aplikasi monitoring kualitas udara berbasis web untuk menampilkan data polusi dan kualitas udara secara real-time.',
+      image: portofolio8,
       category: 'web',
-      technologies: ['Next.js', 'Prisma', 'Video.js', 'WebRTC'],
-      liveUrl: '#',
+      technologies: ['ExpressJS', 'Firebase', 'Tailwindcss'],
+      liveUrl: 'https://monitoring-kualitas-udara.onrender.com/',
       githubUrl: '#',
+      featured: true
+    },
+    {
+      id: 9,
+      title: 'Desain PPLK ITERA 2025',
+      description: 'Desain visual untuk branding dan publikasi kegiatan PPLK ITERA 2025, meliputi poster, feed, dan materi promosi digital.',
+      image: desain1,
+      category: 'design',
+      technologies: ['Figma'],
+      featured: true
+    },
+    {
+      id: 10,
+      title: 'Desain KM ITERA (Keluarga Mahasiswa) 2025',
+      description: 'Desain grafis untuk website dan media sosial KM ITERA, mendukung identitas visual organisasi mahasiswa.',
+      image: desain2,
+      category: 'design',
+      technologies: ['Figma'],
+      featured: true
+    },
+    {
+      id: 11,
+      title: 'Desain PPLK ITERA 2024',
+      description: 'Kumpulan desain digital untuk kebutuhan promosi dan dokumentasi acara PPLK ITERA 2024.',
+      image: desain3,
+      category: 'design',
+      technologies: ['Figma'],
+      featured: true
+    },
+    {
+      id: 12,
+      title: 'Desain Weekly Report (CandidateCollage)',
+      description: 'Desain laporan mingguan untuk CandidateCollage, menampilkan data dan progres tim secara visual dan informatif.',
+      image: desain4,
+      category: 'design',
+      technologies: ['Figma'],
       featured: true
     }
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web', label: 'Web Apps' },
-    { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'design', label: 'UI/UX Design' }
+    { id: 'all', label: 'Semua Proyek' },
+    { id: 'web', label: 'Aplikasi Web' },
+    { id: 'mobile', label: 'Aplikasi Mobile' },
+    { id: 'design', label: 'Desain UI/UX' }
   ];
 
   const filteredProjects = projects.filter(project => {
@@ -123,10 +171,10 @@ const Portfolio: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent mb-6">
-            Portfolio
+            Portofolio
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-            Explore my latest projects showcasing innovation, creativity, and technical excellence
+            Jelajahi proyek-proyek terbaru saya yang menunjukkan inovasi, kreativitas, dan keunggulan teknis
           </p>
         </div>
 
@@ -134,7 +182,7 @@ const Portfolio: React.FC = () => {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-white mb-8 flex items-center space-x-2">
             <span>✨</span>
-            <span>Featured Projects</span>
+            <span>Proyek Unggulan</span>
           </h3>
           <div className="grid lg:grid-cols-2 gap-8">
             {featuredProjects.slice(0, 2).map((project) => (
@@ -156,14 +204,14 @@ const Portfolio: React.FC = () => {
                         className="flex items-center space-x-2 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 rounded-lg text-black font-medium transition-colors duration-200"
                       >
                         <ExternalLink className="w-4 h-4" />
-                        <span>Live Demo</span>
+                        <span>Lihat Demo</span>
                       </a>
                       <a
                         href={project.githubUrl}
                         className="flex items-center space-x-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-white font-medium transition-colors duration-200"
                       >
                         <Github className="w-4 h-4" />
-                        <span>Code</span>
+                        <span>Kode</span>
                       </a>
                     </div>
                   </div>
@@ -195,7 +243,7 @@ const Portfolio: React.FC = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search projects..."
+                placeholder="Cari proyek..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500/50 focus:outline-none transition-colors duration-200"
@@ -215,7 +263,7 @@ const Portfolio: React.FC = () => {
                       : 'bg-black/30 backdrop-blur-xl border border-gray-700/50 text-gray-300 hover:border-cyan-500/50'
                       }`}
                   >
-                    {category.label}
+                    {category.label === 'Semua Proyek' ? 'Semua Proyek' : category.label === 'Aplikasi Web' ? 'Aplikasi Web' : category.label === 'Aplikasi Mobile' ? 'Aplikasi Mobile' : category.label === 'Desain UI/UX' ? 'Desain UI/UX' : category.label}
                   </button>
                 ))}
               </div>
@@ -268,7 +316,7 @@ const Portfolio: React.FC = () => {
                   ))}
                   {project.technologies.length > 3 && (
                     <span className="px-2 py-1 bg-gray-800/50 text-gray-300 rounded text-xs">
-                      +{project.technologies.length - 3} more
+                      +{project.technologies.length - 3} lainnya
                     </span>
                   )}
                 </div>
@@ -284,7 +332,7 @@ const Portfolio: React.FC = () => {
               onClick={() => setVisibleCount((prev) => prev + 3)}
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30"
             >
-              Load More
+              Tampilkan Lebih Banyak
             </button>
           </div>
         )}
@@ -293,20 +341,20 @@ const Portfolio: React.FC = () => {
         {filteredProjects.length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold text-white mb-2">No projects found</h3>
-            <p className="text-gray-400">Try adjusting your search or filter criteria</p>
+            <h3 className="text-2xl font-bold text-white mb-2">Tidak ada proyek ditemukan</h3>
+            <p className="text-gray-400">Coba ubah kata kunci pencarian atau filter kategori</p>
           </div>
         )}
 
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="bg-black/30 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-4">Like what you see?</h3>
+            <h3 className="text-3xl font-bold text-white mb-4">Tertarik dengan karya saya?</h3>
             <p className="text-gray-300 mb-6">
-              Let's discuss your next project and bring your ideas to life with cutting-edge technology and design.
+              Mari diskusikan proyek Anda berikutnya dan wujudkan ide Anda dengan teknologi dan desain terkini.
             </p>
             <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30">
-              Start a Project
+              Mulai Proyek
             </button>
           </div>
         </div>

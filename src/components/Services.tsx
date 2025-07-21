@@ -8,44 +8,44 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: Code,
-      title: 'Full-Stack Development',
-      description: 'End-to-end web application development using modern technologies like React, Node.js, and cloud services.',
-      features: ['Custom Web Applications', 'API Development', 'Database Design', 'Performance Optimization'],
+      title: 'Pengembangan Web Full-Stack',
+      description: 'Pengembangan aplikasi web end-to-end menggunakan teknologi modern seperti React, Node.js, dan layanan cloud.',
+      features: ['Aplikasi Web Kustom', 'Pengembangan API', 'Desain Database', 'Optimasi Performa'],
       color: 'cyan'
     },
     {
       icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Creating intuitive and beautiful user interfaces that provide exceptional user experiences.',
-      features: ['User Research', 'Wireframing & Prototyping', 'Visual Design', 'Usability Testing'],
+      title: 'Desain UI/UX',
+      description: 'Menciptakan antarmuka pengguna yang intuitif dan indah untuk pengalaman pengguna yang luar biasa.',
+      features: ['Riset Pengguna', 'Wireframing & Prototyping', 'Desain Visual', 'Uji Kegunaan'],
       color: 'green'
     },
     {
       icon: Smartphone,
-      title: 'Mobile Development',
-      description: 'Native and cross-platform mobile applications for iOS and Android using React Native.',
-      features: ['Cross-Platform Apps', 'Native Performance', 'App Store Deployment', 'Maintenance & Updates'],
+      title: 'Pengembangan Mobile',
+      description: 'Aplikasi mobile native dan lintas platform untuk iOS dan Android menggunakan React Native.',
+      features: ['Aplikasi Lintas Platform', 'Performa Native', 'Deploy ke App Store', 'Pemeliharaan & Update'],
       color: 'purple'
     },
     {
       icon: Cloud,
-      title: 'Cloud Architecture',
-      description: 'Scalable cloud solutions and infrastructure setup for reliable and efficient applications.',
-      features: ['AWS/Azure Setup', 'DevOps & CI/CD', 'Auto-scaling', 'Monitoring & Analytics'],
+      title: 'Arsitektur Cloud',
+      description: 'Solusi cloud yang skalabel dan setup infrastruktur untuk aplikasi yang andal dan efisien.',
+      features: ['Setup AWS/Azure', 'DevOps & CI/CD', 'Auto-scaling', 'Monitoring & Analitik'],
       color: 'yellow'
     },
     {
       icon: Zap,
-      title: 'Performance Optimization',
-      description: 'Speed up your applications and improve user experience with advanced optimization techniques.',
-      features: ['Code Optimization', 'Database Tuning', 'Caching Strategies', 'SEO Enhancement'],
+      title: 'Optimasi Performa',
+      description: 'Meningkatkan kecepatan aplikasi dan pengalaman pengguna dengan teknik optimasi lanjutan.',
+      features: ['Optimasi Kode', 'Tuning Database', 'Strategi Caching', 'Peningkatan SEO'],
       color: 'cyan'
     },
     {
       icon: Shield,
-      title: 'Security & Maintenance',
-      description: 'Comprehensive security audits and ongoing maintenance to keep your applications safe and updated.',
-      features: ['Security Audits', 'Regular Updates', 'Backup Solutions', '24/7 Monitoring'],
+      title: 'Keamanan & Pemeliharaan',
+      description: 'Audit keamanan menyeluruh dan pemeliharaan rutin untuk menjaga aplikasi tetap aman dan up-to-date.',
+      features: ['Audit Keamanan', 'Update Berkala', 'Solusi Backup', 'Monitoring 24/7'],
       color: 'green'
     }
   ];
@@ -53,34 +53,34 @@ const Services: React.FC = () => {
   const pricingPlans = [
     {
       id: 'starter',
-      name: 'Starter',
+      name: 'Pemula',
       price: 2500,
-      period: 'project',
-      description: 'Perfect for small businesses and startups',
+      period: 'proyek',
+      description: 'Cocok untuk bisnis kecil dan startup',
       features: [
         'Single Page Application',
-        'Responsive Design',
-        'Basic SEO Optimization',
-        '30 Days Support',
-        'Source Code Included'
+        'Desain Responsif',
+        'Optimasi SEO Dasar',
+        'Dukungan 30 Hari',
+        'Source Code Disertakan'
       ],
       color: 'gray',
       popular: false
     },
     {
       id: 'professional',
-      name: 'Professional',
+      name: 'Profesional',
       price: 5000,
-      period: 'project',
-      description: 'Ideal for growing businesses',
+      period: 'proyek',
+      description: 'Ideal untuk bisnis yang sedang berkembang',
       features: [
         'Multi-Page Application',
-        'Custom Design System',
-        'Advanced Animations',
-        'Database Integration',
-        'API Development',
-        '90 Days Support',
-        'Performance Optimization'
+        'Sistem Desain Kustom',
+        'Animasi Lanjutan',
+        'Integrasi Database',
+        'Pengembangan API',
+        'Dukungan 90 Hari',
+        'Optimasi Performa'
       ],
       color: 'cyan',
       popular: true
@@ -89,17 +89,17 @@ const Services: React.FC = () => {
       id: 'enterprise',
       name: 'Enterprise',
       price: 10000,
-      period: 'project',
-      description: 'For large-scale applications',
+      period: 'proyek',
+      description: 'Untuk aplikasi skala besar',
       features: [
-        'Complex Web Platform',
-        'Microservices Architecture',
-        'Cloud Infrastructure',
-        'Advanced Security',
+        'Platform Web Kompleks',
+        'Arsitektur Microservices',
+        'Infrastruktur Cloud',
+        'Keamanan Lanjutan',
         'Load Balancing',
         'DevOps & CI/CD',
-        '6 Months Support',
-        'Training & Documentation'
+        'Dukungan 6 Bulan',
+        'Pelatihan & Dokumentasi'
       ],
       color: 'green',
       popular: false
@@ -150,10 +150,10 @@ const Services: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent mb-6">
-            Services
+            Layanan
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive digital solutions to bring your ideas to life
+            Solusi digital lengkap untuk mewujudkan ide Anda
           </p>
         </div>
 
@@ -189,7 +189,7 @@ const Services: React.FC = () => {
               onClick={() => setVisibleServiceCount((prev) => prev + 3)}
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30"
             >
-              Load More
+              Tampilkan Lebih Banyak
             </button>
           </div>
         )}
@@ -197,18 +197,17 @@ const Services: React.FC = () => {
         {/* FAQ Section */}
         <div className="text-center">
           <div className="bg-black/30 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-6">Ready to Start Your Project?</h3>
+            <h3 className="text-3xl font-bold text-white mb-6">Siap Memulai Proyek Anda?</h3>
             <p className="text-gray-300 text-lg mb-8">
-              Let's discuss your requirements and create something amazing together.
-              Get a free consultation and project estimate.
+              Mari diskusikan kebutuhan Anda dan ciptakan sesuatu yang luar biasa bersama. Dapatkan konsultasi dan estimasi proyek gratis.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30">
-                Schedule Consultation
+                Jadwalkan Konsultasi
               </button>
               <button className="px-8 py-4 bg-black/50 border border-gray-700/50 rounded-xl font-semibold text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-300">
-                View Portfolio
+                Lihat Portofolio
               </button>
             </div>
           </div>

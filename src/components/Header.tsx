@@ -20,11 +20,11 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'services', label: 'Services' },
+    { id: 'home', label: 'Beranda' },
+    { id: 'about', label: 'Tentang' },
+    { id: 'experience', label: 'Pengalaman' },
+    { id: 'portfolio', label: 'Portofolio' },
+    { id: 'services', label: 'Layanan' },
   ];
 
   return (
@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
 
             <button className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-green-500 rounded-lg font-medium hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30">
               <Download className="w-4 h-4" />
-              <span>Resume</span>
+              <span>CV</span>
             </button>
           </div>
 
@@ -149,7 +149,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
 
                 <button className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-green-500 rounded-lg font-medium">
                   <Download className="w-4 h-4" />
-                  <span>Download Resume</span>
+                  <span>Unduh CV</span>
                 </button>
               </div>
             </div>

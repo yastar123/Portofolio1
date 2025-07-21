@@ -6,34 +6,34 @@ const Footer: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Navigation',
+      title: 'Navigasi',
       links: [
-        { label: 'Home', href: '#home' },
-        { label: 'About', href: '#about' },
-        { label: 'Portfolio', href: '#portfolio' },
-        { label: 'Services', href: '#services' },
+        { label: 'Beranda', href: '#home' },
+        { label: 'Tentang', href: '#about' },
+        { label: 'Portofolio', href: '#portfolio' },
+        { label: 'Layanan', href: '#services' },
         { label: 'Blog', href: '#blog' },
-        { label: 'Contact', href: '#contact' }
+        { label: 'Kontak', href: '#contact' }
       ]
     },
     {
-      title: 'Services',
+      title: 'Layanan',
       links: [
-        { label: 'Web Development', href: '#services' },
-        { label: 'Mobile Apps', href: '#services' },
-        { label: 'UI/UX Design', href: '#services' },
-        { label: 'Consulting', href: '#services' },
-        { label: 'Maintenance', href: '#services' }
+        { label: 'Pengembangan Web', href: '#services' },
+        { label: 'Aplikasi Mobile', href: '#services' },
+        { label: 'Desain UI/UX', href: '#services' },
+        { label: 'Konsultasi', href: '#services' },
+        { label: 'Pemeliharaan', href: '#services' }
       ]
     },
     {
-      title: 'Resources',
+      title: 'Sumber Daya',
       links: [
-        { label: 'Blog Articles', href: '#blog' },
-        { label: 'Case Studies', href: '#portfolio' },
-        { label: 'Free Tools', href: '#' },
-        { label: 'Templates', href: '#' },
-        { label: 'Newsletter', href: '#' }
+        { label: 'Artikel Blog', href: '#blog' },
+        { label: 'Studi Kasus', href: '#portfolio' },
+        { label: 'Alat Gratis', href: '#' },
+        { label: 'Template', href: '#' },
+        { label: 'Buletin', href: '#' }
       ]
     }
   ];
@@ -65,8 +65,7 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-gray-300 leading-relaxed mb-6">
-                Passionate about creating digital experiences that blend functionality
-                with stunning aesthetics. Let's build something amazing together.
+                Saya antusias menciptakan pengalaman digital yang memadukan fungsi dan estetika. Mari bangun sesuatu yang luar biasa bersama.
               </p>
 
               {/* Social Links */}
@@ -110,20 +109,19 @@ const Footer: React.FC = () => {
         {/* Newsletter Section */}
         <div className="py-12 border-t border-gray-700/50">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Stay in the Loop</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Tetap Terhubung</h3>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Get the latest updates on web development trends, tutorials, and project insights
-              delivered directly to your inbox.
+              Dapatkan update terbaru seputar tren pengembangan web, tutorial, dan insight proyek langsung ke email Anda.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Masukkan email Anda"
                 className="flex-1 px-4 py-3 bg-black/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500/50 focus:outline-none transition-colors duration-200"
               />
               <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold text-black hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 whitespace-nowrap">
-                Subscribe
+                Langganan
               </button>
             </div>
           </div>
@@ -142,10 +140,10 @@ const Footer: React.FC = () => {
 
             <div className="flex items-center space-x-6">
               <a href="#" className="text-gray-400 hover:text-cyan-300 transition-colors duration-300">
-                Privacy Policy
+                Kebijakan Privasi
               </a>
               <a href="#" className="text-gray-400 hover:text-cyan-300 transition-colors duration-300">
-                Terms of Service
+                Syarat & Ketentuan
               </a>
 
               {/* Back to Top Button */}

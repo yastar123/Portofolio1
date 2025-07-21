@@ -10,10 +10,10 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const phrases = [
-    'Full-Stack Developer',
-    'UI/UX Designer',
-    'Digital Innovator',
-    'Problem Solver'
+    'Pengembang Web Full-Stack',
+    'Desainer UI/UX',
+    'Inovator Digital',
+    'Penyelesai Masalah'
   ];
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         {/* Main Content */}
         <div className="my-8 ">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6">
-            <span className="block text-white mb-2">Hey, I'm</span>
+            <span className="block text-white mb-2">Halo, saya</span>
             <span className="block bg-gradient-to-r from-cyan-400 via-green-400 to-purple-400 bg-clip-text text-transparent">
               Edu Juanda Pratama
             </span>
@@ -68,8 +68,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           </div>
 
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Passionate developer with 5+ years creating digital experiences that blend functionality
-            with stunning aesthetics. Specialized in React, Node.js, and modern web technologies.
+            Pengembang web yang berpengalaman lebih dari 5 tahun menciptakan pengalaman digital yang fungsional dan estetis. Spesialis di React, Node.js, dan teknologi web modern.
           </p>
         </div>
 
@@ -80,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                 <Code className="w-6 h-6 text-black" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Development</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">Pengembangan</h3>
               <p className="text-gray-400">React, Node.js, TypeScript, Next.js</p>
             </div>
           </div>
@@ -90,8 +89,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-400 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                 <Palette className="w-6 h-6 text-black" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Design</h3>
-              <p className="text-gray-400">UI/UX, Figma, Adobe XD, Prototyping</p>
+              <h3 className="text-xl font-semibold text-white mb-2">Desain</h3>
+              <p className="text-gray-400">Figma, UI/UX, Prototyping</p>
             </div>
           </div>
 
@@ -100,8 +99,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-400 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-6 h-6 text-black" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Innovation</h3>
-              <p className="text-gray-400">AI Integration, Cloud Architecture</p>
+              <h3 className="text-xl font-semibold text-white mb-2">Inovasi</h3>
+              <p className="text-gray-400">Integrasi AI, Arsitektur Cloud</p>
             </div>
           </div>
         </div>
@@ -112,7 +111,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             onClick={() => scrollToSection('experience')}
             className="group flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 rounded-xl font-semibold hover:from-cyan-400 hover:to-green-400 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:scale-105"
           >
-            <span>View Experience</span>
+            <span>Lihat Pengalaman</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
 
@@ -120,7 +119,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             onClick={() => scrollToSection('contact')}
             className="flex items-center space-x-2 px-8 py-4 bg-black/30 backdrop-blur-xl border border-gray-700/50 rounded-xl font-semibold text-white hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105"
           >
-            <span>Get In Touch</span>
+            <span>Hubungi Saya</span>
           </button>
         </div>
 

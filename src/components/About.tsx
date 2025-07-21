@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, MapPin, Award, Users, Coffee, Rocket } from 'lucide-react';
 import Experience from './Experience';
+import saya from '../image/saya.png';
 
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('experience');
@@ -52,10 +53,10 @@ const About: React.FC = () => {
   ];
 
   const stats = [
-    { label: 'Projects Completed', value: 150, icon: Rocket, color: 'cyan' },
-    { label: 'Happy Clients', value: 80, icon: Users, color: 'green' },
-    { label: 'Awards Won', value: 12, icon: Award, color: 'purple' },
-    { label: 'Coffee Consumed', value: 9999, icon: Coffee, color: 'yellow' }
+    { label: 'Proyek Selesai', value: 150, icon: Rocket, color: 'cyan' },
+    { label: 'Klien Puas', value: 80, icon: Users, color: 'green' },
+    { label: 'Penghargaan', value: 12, icon: Award, color: 'purple' },
+    { label: 'Cangkir Kopi', value: 9999, icon: Coffee, color: 'yellow' }
   ];
 
   const getColorClasses = (color: string) => {
@@ -74,10 +75,10 @@ const About: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent mb-6">
-            About Me
+            Tentang Saya
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Passionate about creating digital experiences that make a difference
+            Saya antusias menciptakan pengalaman digital yang berdampak dan bermanfaat.
           </p>
         </div>
 
@@ -118,18 +119,12 @@ const About: React.FC = () => {
           {activeTab === 'bio' && (
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-white">Hello, I'm Edu Juanda Pratama</h3>
+                <h3 className="text-3xl font-bold text-white">Halo, saya Edu Juanda Pratama</h3>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  I'm a passionate full-stack developer with over 5 years of experience creating
-                  digital solutions that combine beautiful design with powerful functionality.
-                  My journey in tech started with a curiosity about how things work and evolved
-                  into a career dedicated to building applications that make people's lives easier.
+                  Saya seorang full-stack developer yang bersemangat dengan pengalaman lebih dari 5 tahun menciptakan solusi digital yang menggabungkan desain indah dan fungsionalitas kuat. Perjalanan saya di dunia teknologi dimulai dari rasa ingin tahu dan berkembang menjadi karir yang didedikasikan untuk membangun aplikasi yang memudahkan hidup orang lain.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to
-                  open-source projects, or enjoying a good cup of coffee while brainstorming the
-                  next big idea. I believe in continuous learning and staying ahead of the curve
-                  in this ever-evolving tech landscape.
+                  Di luar coding, saya suka mengeksplorasi teknologi baru, berkontribusi pada proyek open-source, atau menikmati secangkir kopi sambil mencari ide besar berikutnya. Saya percaya pada pembelajaran berkelanjutan dan selalu mengikuti perkembangan teknologi.
                 </p>
                 <div className="flex items-center space-x-4 text-gray-400">
                   <div className="flex items-center space-x-2">
@@ -138,7 +133,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Calendar className="w-5 h-5" />
-                    <span>Available for projects</span>
+                    <span>Tersedia untuk proyek</span>
                   </div>
                 </div>
               </div>
@@ -146,7 +141,9 @@ const About: React.FC = () => {
               <div className="relative">
                 <div className="bg-black/30 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-300">
                   <div className="w-full h-64 bg-gradient-to-br from-cyan-500/20 to-green-500/20 rounded-2xl flex items-center justify-center">
-                    <div className="text-6xl">👨‍💻</div>
+                    <div className="text-6xl">
+                      <img src={saya} alt="saya"></img>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -155,14 +152,14 @@ const About: React.FC = () => {
 
           {activeTab === 'experience' && (
             <>
-            <Experience />
+              <Experience />
             </>
           )}
 
           {activeTab === 'skills' && (
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-8">Technical Skills</h3>
+                <h3 className="text-2xl font-bold text-white mb-8">Keahlian Teknis</h3>
                 <div className="space-y-6">
                   {skills.map((skill, index) => (
                     <div key={index} className="space-y-2">
